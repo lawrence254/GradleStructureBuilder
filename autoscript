@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Enter Directory Name: "
+read dir
+
+if [ ! -d "$dir" ]; then
+    mkdir $dir;
+    echo "$dir created. Creating folder structure";
+    cd $dir;
+    touch build.gradle
+    echo "Switched to $dir. Created build.gradle. Now creating remaining folders";
+    mkdir -p src/main/java/ && mkdir -p src/test/java
+fi
+
+# Create Gradle projects faster.
+# Created By: Lawrence. Enjoy Using it.
